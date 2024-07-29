@@ -1,0 +1,46 @@
+Closures---
+            a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+
+Lexical Scoping---
+                  example of lexical Scoping--
+
+                      function init() {
+                            var name = "Mozilla"; // name is a local variable created by init
+                            function displayName() {
+                                // displayName() is the inner function, that forms the closure
+                                console.log(name); // use variable declared in the parent function
+                             }
+                             displayName();
+                      }
+
+            calling outer Function---          init();
+
+            output -----------------------//   Mozilla
+
+
+--In my Word -- Lexical Scoping means child have Access of Parent variables , functions,etc. but parent does not have access the variables,functions of child.
+--In the given example inner function(displayName) have Access the 'name' Variable which present in the parent function(init);
+--In the Lexical Scoping Sibling also have Access of Parent Variablesand functions  but it does not have Access of their Sibling variable and functions.
+
+closures -- 
+           example--
+
+                    function makeFunc() {
+                           const name = "Mozilla";
+                           function displayName() {
+                                   console.log(name);
+                           }
+                           return displayName;
+                    }
+
+    calling the function ---   const myFunc = makeFunc();
+                                 myFunc();
+
+output ---------------------------//   Mozilla
+
+--In the given Example when we return the inner fuction then by the concept of closures and Lexical Scoping the outer 
+  function(makeFunc) not give the inner function(displayName) only.It give inner function (displayName) with their Lexical Scoping.
+  means the inner function have access of parent function things(variables,function) during its return time.
+
+
+-- Practical implementation of Lexical Scoping and Closures is given by the HTML Code of BackGround Color Changer..
