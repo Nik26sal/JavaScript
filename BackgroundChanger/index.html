@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .style{
+            border: 2px solid black;
+            font-size: x-large;
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(66, 64, 64);">
+    <Button class="style" style="background-color: green;" id="green">Green</Button>
+    <Button class="style" style="background-color: orange;" id="orange">Orange</Button>
+    <Button class="style" style="background-color: red;" id="red">Red</Button>
+    <Button class="style" style="background-color:blue;" id="blue">Blue</Button>
+    <Button class="style" style="background-color:white;" id="white">White</Button>
+    <Button class="style" style="background-color:yellow;" id="yellow">Yellow</Button>
+    <script>
+        function change(color){
+            return function backgroundChange(){
+                document.body.style.backgroundColor = `${color}`;
+            }
+        }
+       
+        document.getElementById('green').onclick = change("green");
+        document.getElementById('orange').onclick = change("orange");
+        document.getElementById('red').onclick = change("red");
+        document.getElementById('blue').onclick = change("blue");
+        document.getElementById('white').onclick = change("white");
+        document.getElementById('yellow').onclick = change("yellow");
+    </script>
+</body>
+</html>
