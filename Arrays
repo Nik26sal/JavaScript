@@ -1,0 +1,27 @@
+Array is a type of Data Structure that are used to store multiple element in a single variable.
+In JavaScript multiple type of value is stored in array
+On coping the array Shallow copy was developed.
+--Shallow Copy --> Same refrence point in heap is done by the varaible present in stack memory.
+                   On changing in any one the original will be change means affect on other.
+                   example:- Arrays,Object etc.
+--Deep Copy --> Differnt refrence Point are Develope.
+                On changing in any one it  will not give affect on other.
+                example:- Any Variable that develope by primitive dataType(NNBBSSU)etc.
+
+--Methods in the Array-->
+                        1.push(element) == add value at last
+                        2.pop() == remove value from last
+                        3.ushift(element) == add value from starting 
+                        4.shift() == remove from starting
+                        5.includes(elements) == boolean value if present or not
+                        6.indexOf(element) == index of element if present else -1
+                        7.join() == join all element of array and make type as string
+                        8.slice(st index,end index) == return section from st index to ending index-1
+                        9.splice(st index,end index) == return section from st index to ending index-1 and from this section from original array
+                        10.concate(other arrayname) == merge array.
+                        11.[.. arr1,..arr2] == called as spread and rest operator
+                        12. flat(depth) == make array as single but  atleast rate of depth
+                        13.Array.isArray() == return true and false if variable type is array
+                        14.Array.from(element) == the elemet is string  or other but if the element is object then it return [] because we cannot define the array is of key and value
+                        15.Array.of(src1,src2,src3.........) 
+                
