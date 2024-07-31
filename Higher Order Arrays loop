@@ -1,0 +1,43 @@
+---for of loops -->
+                   for(const varaiableName of arrName){
+                        console.log(VaraiableName);
+                   }
+           It also applicable on String.
+           Maps in JavaScript---
+         only get the unique values........
+        ---const map = new Map();
+           1.set(key,value);
+      for of loop is valid on it
+      for(const key of map){
+          console.log(key);
+       } // [],[],[] and so on........
+      -destructure of it 
+       for(const [key,values] of map){
+          console.log(key);
+        } // print only keys
+       
+---object are not iterable so for of loop not work on it.
+   it give error on using it.
+
+----for in loops -->
+                    It is applicable on objects.
+                     for(const key in objectName){
+                         console.log(key); // print keys
+                         console.log(objectName[key]); // print values
+                      }
+                  -- if this type of loop is used in array then it give the index value of the array
+                  -- to access values use the syntax 'arrayName[key]';
+                   --map are not iterable for this loop it give not error but 
+                   --not print anything.
+
+
+----for Each loops(it is an Higher Order Function) -->
+                                 arrayName.forEach(function funcName(val){
+                                           console.log(val);
+                                  });
+                                  // key is the main item of this loop
+                                  //arrow function is also used in it.
+                                  // infact of function we also give the refrence of function not execute it.
+                                  // parementers of it not key or item it has item,index,arr  as parameter
+                                  // if array has many objects in it then it used. 
+                      
