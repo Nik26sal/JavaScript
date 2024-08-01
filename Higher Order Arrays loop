@@ -40,4 +40,5 @@
                                   // infact of function we also give the refrence of function not execute it.
                                   // parementers of it not key or item it has item,index,arr  as parameter
                                   // if array has many objects in it then it used. 
+                                  // it return nothing if we take this loop in a variable than the value of this variable is undefined........
                       
