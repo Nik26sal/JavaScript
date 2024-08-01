@@ -1,0 +1,23 @@
+-->> filter
+         const variableName = arrayName.filter((key) => condition)
+         // the variable name is required bcz it return array
+         // key is required 
+         // if the condition are in {condition} then use return at last oterwise 
+            it return []
+            //example const VariableName = ArrayName.filter((key)=>{return condition});
+                      console.log(Variable Name);
+          // it retun the value when the condition is true
+-->> map
+           const variableName = arrayName.map((key) => condition)
+           return array
+           same as filter
+           chaning is done in it
+
+-->> reduce
+          initialValue = 0
+          const Variable name = arrayName.reduce((accumulator,currentValue) => accumulator+currentValue,InitialValue)
+          return the sum of all the element in the array or object;
+          accumulator have the value that present in initial value
+          after doing the work the answer stored in initial value that value sored in accumulator also
+          current value have the element in the array
+          
