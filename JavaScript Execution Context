@@ -1,0 +1,16 @@
+-- Two type of Execution context is present :-
+                                 1.Global Execution context
+                                 2.Functional Execution context
+                                 3.Eval Execution Context
+--The Global Execution Context done in two phase :--
+                                                    1.Memory management phase
+                                                                            -In this phase the all the variables are assigned with value undefined
+                                                                            -The function is assigned with defination.
+                                                    2.Execution phase
+                                                                   -In this phase all the Variables assigned their values. 
+                                                                   -On the calling of the function new execution context is been develope.
+                                                                   -The value is return to the global execution context after completion of call and this is assigned to the variable by this
+                                                                   who call the function.
+
+--During the execution of a program, the Global Execution Context is created. 
+  In this context, the this keyword refers to the global object, which is why console.log(this) prints the window object.
