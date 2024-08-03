@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #heading{
+            margin: 0px auto;
+            width:fit-content;
+            font-size:100px;
+        }
+        .buttons{
+            display: flex;
+            padding: 5px;
+            justify-content:space-evenly;
+            align-items: center;
+        }
+        .buttons button{
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Unlimited Color</h1>
+    <div class="buttons">
+        <button>Start</button>
+        <button>Stop</button>
+    </div>
+   <script>
+        const generateColors = function() {
+            const str = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                const a = Math.floor(Math.random() * str.length);
+                color += str[a];
+            }
+            document.body.style.backgroundColor = color;
+        }
+
+        let interval;
+
+        const start = function() {
+            if (!interval) {
+                interval = setInterval(generateColors, 500);
+            }
+        }
+
+        const stop = function() {
+            clearInterval(interval);
+            interval = null;
+        }
+
+        document.querySelectorAll('button')[0].onclick = start;
+        document.querySelectorAll('button')[1].onclick = stop;
+    </script>
+</body>
+</html>
