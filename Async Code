@@ -1,0 +1,6 @@
+--JavaScript is Synchrounus type of programming.It works on single thread
+--it execute one line of code at a time.each operation wait for a last one to complete before execution 
+--some time such situation are come when we want that a line execute thier work continuously and the under line will execute to perform it 
+  Asynchronous code will be written.setTimeOut()and setIntervals are used to achive it.
+-- Blocking code -->read file Sync.Block the flow of program.
+-- Non Blocking code --> read file Async.not floww the flow of program.
