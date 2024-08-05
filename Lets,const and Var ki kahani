@@ -1,0 +1,14 @@
+const id = 12345
+let email = nfekdek@gmail.com
+var acc = nwlkfnek;
+p = iohjegolie;
+
+// id = jskjvskjns not allowed bcz it is constant and not change but all are changeable
+
+console.table([]);// give output in the form of table
+
+var is not used due to Scope problem bcz it has global variable
+the reason for it in inteview is issueof block scope or functional scope
+
+let kjjs;
+the output is undefined
