@@ -12,3 +12,16 @@ DataTypes::
 typeOf(VariableName) // define the type of variable
 typeOf(Undefined) // undefined
 typeOf(null) // Object
+
+let a = "30";
+typeOf(a) // string;
+Number(a);
+typeOf(a) // number;
+
+let a = "30anc"
+Number(a);
+typeOf(a) //number;
+console.log(a) // NAN not a number
+if a = null then 0
+if a = undefined then NAN
+if true then 1 and false then 0
