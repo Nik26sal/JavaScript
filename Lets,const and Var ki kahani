@@ -12,3 +12,40 @@ the reason for it in inteview is issueof block scope or functional scope
 
 let kjjs;
 the output is undefined
+
+example1::var a = 45;               
+         if(true){
+              var a = 55;
+              console.log(a);
+         }
+         console.log(a);
+output.... 55
+           55
+
+example2::let a = 45;
+         if(true){
+              let a = 55;
+              console.log(a);
+         }
+         console.log(a);
+output.... 55
+           45
+
+example3::let a = 45;
+         if(true){
+              a = 55;
+              console.log(a);
+         }
+         console.log(a);
+output.... 55
+           55
+
+example4::var a = 45;
+         if(true){
+              a = 55;
+              console.log(a);
+         }
+         console.log(a);
+output.... 55
+           55
+
