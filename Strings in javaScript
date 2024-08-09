@@ -1,0 +1,13 @@
++sign is used to concatenate String
+String interpolations --`${variable name}`
+StringVariableName[index] give the character at given index
+.length
+.toUpperCase()
+.charAt(index);
+.indexOf('character');
+.substring();
+.slice() -ve values also given
+.trim();
+.replace();
+.includes();
+.split();
