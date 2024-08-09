@@ -1,0 +1,14 @@
+let my_Date = new Date();
+my_Date.toString();
+my_Date.toLocalString();
+my_Date.toDateString();
+typeOf my_Date // object
+month started from 0 to 11
+Date.now();give in ms
+.getTime()
+/1000 to get in sec.
+.getMonth()+1
+.getDate()
+newDate.toLocalString('default',{
+weekday:"long"
+})
