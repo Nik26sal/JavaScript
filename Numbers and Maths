@@ -1,0 +1,24 @@
+Number num = new Number(100);
+console.log(num)//[Number:100];
+toString();
+toFixed();
+toPrecision();
+toLocalString(en-IN);
+.MAX_VALUE
+.MIN_VALUE
+
+Math is an object 
+Math.abs();
+Math.pi()
+Math.round()
+Math.ceil();
+Math.floor();
+Math.sqrt();
+Math.pow();
+Math.min();
+Math.max();
+
+Math.random()//give 0 to 1;except 1
+Math.floor((Math.random*10) + 1)//1-10
+want to take it in range 
+Math.floor((Math.random()*(max-min+1))+min)
