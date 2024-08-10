@@ -1,0 +1,163 @@
+Object is declared in two ways.1.By Litrals and 2.By Constructors
+Single Ton class is only develope when we use the Constuctor method to make object.
+syntax
+const variableName = {
+         Key:value
+}
+
+Access object:
+             1. variableName.properties(key Name)
+             2. VariableName["keyName"];
+
+Note:if Give Key like that  "fullName":"nikhil Bansal"
+     then it cannot we access by '.' this operator it can only access by vartiableName["keyName"] this can only due to By default Key is alsways taken in term of string
+
+In case of Symbol
+eg.. const mysym = Symbol("key1")
+     const object = {
+            mysym:"key1_of_Symbol"
+     }
+    console.log(object.mysym) // key1_of_Symbol
+    console.log(type of object.mysym) // String but we declare as a symbol so to correct it 
+    const mysym = Symbol("key1")
+    const object = {
+          [mysym]:"key1_of_Symbol"
+   }
+   console.log(object.mysym) // it not access like that because it is symbol now so the correct syntax to access it 
+   console.log(object[mysym]) //key1_of_Symbol
+   console.log(type of object.mysym) // symbol
+
+   The key Values of the object is mutable in nature..
+   To freeze the Object  Object.freeze(variable Name)
+   After freeze if we done the  change the change or any error not occur
+
+
+const mySym = Symbol("key1")
+
+
+const JsUser = {
+    name: "Hitesh",
+    "full name": "Hitesh Choudhary",
+    [mySym]: "mykey1",
+    age: 18,
+    location: "Jaipur",
+    email: "hitesh@google.com",
+    isLoggedIn: false,
+    lastLoginDays: ["Monday", "Saturday"]
+}
+
+// console.log(JsUser.email)
+// console.log(JsUser["email"])
+// console.log(JsUser["full name"])
+// console.log(JsUser[mySym])
+
+JsUser.email = "hitesh@chatgpt.com"
+// Object.freeze(JsUser)
+JsUser.email = "hitesh@microsoft.com"
+// console.log(JsUser);
+
+JsUser.greeting = function(){
+    console.log("Hello JS user");
+}
+JsUser.greetingTwo = function(){
+    console.log(`Hello JS user, ${this.name}`);
+}
+
+console.log(JsUser.greeting());
+console.log(JsUser.greetingTwo());
+
+
+
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Notes with proper defination
+ Object Declaration:
+
+Literals: Objects can be declared using object literals.
+Constructors: Objects can also be created using constructor functions or classes. However, you mentioned Single Ton (Singleton) which is a design pattern rather than a specific way to create objects.
+Object Syntax:
+
+Literal Syntax:
+javascript
+Copy code
+const variableName = {
+  key: value
+}
+Accessing Properties:
+javascript
+Copy code
+variableName.key // dot notation
+variableName["key"] // bracket notation
+Note: If the key is not a valid identifier or is a reserved word, you must use bracket notation. Also, keys are always strings (or symbols) by default in JavaScript.
+
+Symbols:
+
+Symbols are unique and immutable. They are often used as unique property keys.
+javascript
+Copy code
+const mySym = Symbol("key1");
+const obj = {
+  [mySym]: "value"
+};
+console.log(obj[mySym]); // "value"
+Symbols are not accessible via dot notation but through bracket notation.
+Freezing Objects:
+
+Object.freeze() makes an object immutable (its properties cannot be changed, added, or deleted).
+javascript
+Copy code
+const obj = { key: "value" };
+Object.freeze(obj);
+obj.key = "newValue"; // This will not change the value
+Example Correction:
+
+Here’s a corrected and improved version of your example:
+
+javascript
+Copy code
+const mySym = Symbol("key1");
+
+const JsUser = {
+  name: "Hitesh",
+  "full name": "Hitesh Choudhary",
+  [mySym]: "mykey1",
+  age: 18,
+  location: "Jaipur",
+  email: "hitesh@google.com",
+  isLoggedIn: false,
+  lastLoginDays: ["Monday", "Saturday"]
+};
+
+console.log(JsUser.email); // "hitesh@google.com"
+console.log(JsUser["email"]); // "hitesh@google.com"
+console.log(JsUser["full name"]); // "Hitesh Choudhary"
+console.log(JsUser[mySym]); // "mykey1"
+
+// Change email
+JsUser.email = "hitesh@chatgpt.com";
+console.log(JsUser.email); // "hitesh@chatgpt.com"
+
+// Freeze the object
+Object.freeze(JsUser);
+
+// Attempt to change email after freeze
+JsUser.email = "hitesh@microsoft.com";
+console.log(JsUser.email); // "hitesh@chatgpt.com" (no change)
+
+// Adding methods to object
+JsUser.greeting = function() {
+  console.log("Hello JS user");
+};
+
+JsUser.greetingTwo = function() {
+  console.log(`Hello JS user, ${this.name}`);
+};
+
+JsUser.greeting(); // "Hello JS user"
+JsUser.greetingTwo(); // "Hello JS user, Hitesh"
+Notes:
+
+After freezing the object, any attempts to modify its properties (like JsUser.email) will be ignored, and no errors will be thrown.
+Adding new methods or properties to a frozen object will also be ignored.
+   
