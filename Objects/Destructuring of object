@@ -1,0 +1,53 @@
+const{objectPropertyName} = objectVariableName // concept of destructuring
+const navbar = (props.company)={
+}
+navbar (company = "hitesh")
+instead of writting this
+we write ___=const navbar({company}){
+            }//this is a concept of destructuring
+
+
+
+
+Destructuring in Function Parameters
+You can use destructuring in function parameters to directly extract values from an object passed to the function. Here’s how you can rewrite your function to use destructuring:
+
+Original Function Definition
+javascript
+Copy code
+const navbar = (props) => {
+  const { company } = props;
+  // Function logic here
+};
+Using Destructuring in Function Parameters
+Instead of extracting company from props inside the function, you can directly destructure it in the function parameter list:
+
+javascript
+Copy code
+const navbar = ({ company }) => {
+  // Function logic here
+};
+
+// Usage
+navbar({ company: "hitesh" });
+Explanation
+Destructuring in Function Parameters:
+
+In the destructured function parameter { company }, you are directly pulling company from the object passed to the function.
+This eliminates the need to extract company from props within the function body.
+Function Call:
+
+When you call navbar({ company: "hitesh" }), you pass an object with a company property, and it’s directly available within the function as company.
+Complete Example
+Here's a full example including a function call:
+
+javascript
+Copy code
+// Function using destructuring in parameters
+const navbar = ({ company }) => {
+  console.log(`Company name is: ${company}`);
+};
+
+// Calling the function with an object
+navbar({ company: "hitesh" }); // Output: Company name is: hitesh
+This approach makes your code cleaner and reduces the need for extra lines to access properties from the object.
