@@ -1,0 +1,21 @@
+>
+>=
+<
+<=
+==
+!=
+===
+!==
+
+DataTypes
+on the basis of access and store datatype
+1.Primitive dataTypes           2.Non Primitive DatTypes(reference type)
+  call by value                    call by reefrence
+  NNBBSSU                          Arrays  Object
+  Number
+  null
+  Boolean
+  BigInt
+  String 
+  Symbol
+  Undefined
