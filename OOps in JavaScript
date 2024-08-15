@@ -1,0 +1,89 @@
+Lecture 1 of oops Notes
+JavaScript is a prototype based language
+oops is just a programming paradim means structure to write code
+objects are just collection of properties and methods
+used to reove the messy codes
+object literal are the part of the oops in javaScript
+this keyword is used to call current context
+if we console log the this in global context then we get window object
+to get new instance new keyWord is used
+
+
+JavaScript and Prototypes:
+
+JavaScript is a prototype-based language, meaning it uses prototypes instead of classes for inheritance. Objects can inherit properties and methods from other objects.
+OOP Paradigm:
+
+OOP (Object-Oriented Programming) is a paradigm that structures code by defining objects that combine data (properties) and behaviors (methods). It helps in organizing code and managing complexity.
+Objects:
+
+In JavaScript, objects are collections of properties and methods. They serve as the fundamental building blocks in this language, allowing you to group related data and functions.
+Removing Messy Code:
+
+OOP helps to make code cleaner and more manageable by encapsulating data and functionality within objects, reducing redundancy and improving readability.
+Object Literals:
+
+Object literals are a way to create objects using a simple syntax. For example:
+javascript
+Copy code
+let person = {
+  name: 'John',
+  age: 30,
+  greet: function() {
+    console.log('Hello!');
+  }
+};
+this Keyword:
+
+The this keyword refers to the current context within an object. In a method, this points to the object that owns the method. In the global context (outside of any function or object), this refers to the global object (i.e., window in browsers).
+Creating New Instances:
+
+To create a new instance of an object or a class, you use the new keyword. This keyword is used to instantiate objects from a constructor function or a class.
+Example of using the new keyword:
+
+javascript
+Copy code
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+let john = new Person('John', 30);
+
+const user = {
+    username: "hitesh",
+    loginCount: 8,
+    signedIn: true,
+
+    getUserDetails: function(){
+        //console.log("Got user details from database");
+        // console.log(`Username: ${this.username}`);
+        console.log(this);
+    }
+
+}
+
+
+
+//console.log(user.username)
+//console.log(user.getUserDetails());
+// console.log(this);
+
+
+function User(username, loginCount, isLoggedIn){
+    this.username = username;
+    this.loginCount = loginCount;
+    this.isLoggedIn = isLoggedIn
+
+    this.greeting = function(){
+        console.log(`Welcome ${this.username}`);
+
+    }
+
+    return this
+}
+
+const userOne = new User("hitesh", 12, true)
+const userTwo = new User("ChaiAurCode", 11, false)
+console.log(userOne.constructor);
+//console.log(userTwo);
