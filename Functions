@@ -1,0 +1,62 @@
+function Name  means Giving refrence 
+functionName() means giving  execute of fuction
+During creation of function the input that are taken called as Parameters and the input given during function call called as arguments
+rest operator or spread operator is used when user don't know the number of values come return in the form of array
+on browser the global object is window object
+this is only work in objects not in functions
+IIFE (Imediately invoked Function Expression)
+------(defination of fuction )(for execution)
+
+
+
+
+
+
+
+Function Name vs. Function Execution:
+
+functionName refers to the function itself, or its reference, and can be passed around as a value.
+functionName() is the syntax used to execute or call the function.
+Parameters vs. Arguments:
+
+Parameters: These are variables listed as part of the function definition. They act as placeholders for the values that will be passed into the function.
+javascript
+Copy code
+function greet(name) {
+  console.log("Hello, " + name);
+}
+Arguments: These are the actual values you pass to the function when you call it.
+javascript
+Copy code
+greet("Alice"); // "Alice" is the argument
+Rest Operator/Spread Operator:
+
+Rest Operator (...): Collects all remaining arguments into an array. Used in function definitions to handle an indefinite number of parameters.
+javascript
+Copy code
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+Spread Operator (...): Expands an array or object into individual elements. Used in function calls to spread elements of an array into individual arguments.
+javascript
+Copy code
+const numbers = [1, 2, 3];
+console.log(sum(...numbers)); // Equivalent to sum(1, 2, 3)
+Global Object:
+
+In browsers, the global object is window. It holds global variables and functions. In Node.js, the global object is global.
+this Keyword:
+
+The value of this depends on how a function is called. It is not limited to objects but can refer to different contexts.
+In a method call, this refers to the object that owns the method.
+In a regular function call, this refers to the global object (window in browsers) or undefined in strict mode.
+In arrow functions, this is lexically bound, meaning it inherits this from the enclosing context.
+Immediately Invoked Function Expression (IIFE):
+
+An IIFE is a function that is executed immediately after its definition. It's used to create a new scope to avoid polluting the global namespace.
+javascript
+Copy code
+(function() {
+  // Code here runs immediately
+  console.log("I am an IIFE!");
+})();
