@@ -14,3 +14,42 @@
 
 --During the execution of a program, the Global Execution Context is created. 
   In this context, the this keyword refers to the global object, which is why console.log(this) prints the window object.
+
+
+Types of Execution Contexts
+Global Execution Context
+
+This is the default or base context where any JavaScript code runs when it's not inside a function. There is only one global execution context in a JavaScript program.
+During the creation of this context, the this keyword refers to the global object (window in browsers or global in Node.js).
+Function Execution Context
+
+Each time a function is invoked, a new execution context is created for that function. This context is specific to that function call and contains information about the function's scope, variables, and the value of this within the function.
+When a function is executed, it gets its own execution context, which gets pushed onto the execution stack.
+Eval Execution Context
+
+The eval function can execute JavaScript code represented as a string. When eval is used, it creates a new execution context for the code being evaluated. However, eval is generally discouraged due to security and performance issues.
+Phases of Global Execution Context Creation
+Creation Phase
+
+Memory Allocation: During this phase, the JavaScript engine allocates memory for variables and functions.
+Variables are initialized with the value undefined.
+Functions are assigned their definitions. This means that function declarations are hoisted, so you can call them before their actual definition in the code.
+Scope Chain Creation: The scope chain is created which allows access to variables and functions from outer scopes.
+Execution Phase
+
+Variable Assignment: The code is executed line by line, and variables are assigned their actual values.
+Function Calls: When a function is called, a new execution context for that function is created, which includes its own scope chain, variables, and the value of this specific to that function call.
+Context Handling: Once a function execution is completed, its context is popped off the stack, and control is returned to the previous context (which could be the global context or another function context).
+Example of Global Execution Context
+javascript
+Copy code
+console.log(this); // In a browser, this will log the `window` object
+
+var a = 10; // `a` is initialized to `undefined` initially, then assigned the value 10 during execution
+
+function greet() {
+  console.log('Hello, world!');
+}
+
+greet(); // Function call creates a new function execution context
+In this example, the global execution context is created first. During the creation phase, a is declared but initialized to undefined, and the greet function is hoisted with its definition. In the execution phase, a is assigned the value 10, and greet is called, creating a new function execution context.
