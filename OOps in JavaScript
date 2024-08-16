@@ -1,4 +1,6 @@
-Lecture 1 of oops Notes
+----Lecture 1 of oops Notes
+
+
 JavaScript is a prototype based language
 oops is just a programming paradim means structure to write code
 objects are just collection of properties and methods
@@ -83,7 +85,63 @@ function User(username, loginCount, isLoggedIn){
     return this
 }
 
+
 const userOne = new User("hitesh", 12, true)
 const userTwo = new User("ChaiAurCode", 11, false)
 console.log(userOne.constructor);
 //console.log(userTwo);
+
+---- letcure 2 notes of oops
+
+
+As we know that javaScript is a protoType language it means it search upper and upper until it reach the null value 
+This concept of prototype provides the concept of this and new Keyword or many other things like inheritance etc.
+In java All the things are Object means the parent of all is Object after object null is present
+
+FunctionName.protoType.methodName = function() // thus we gave property if we ru this code then it not run give error this only run after the using new keyword
+
+
+Prototype Chain in JavaScript
+In JavaScript, every object has a prototype, and the prototype itself is an object. This creates a prototype chain, which allows properties and methods to be inherited from parent objects.
+
+Prototype Chain: When you try to access a property or method on an object, JavaScript looks up the prototype chain until it either finds the property/method or reaches the end of the chain (which is null).
+Constructor Functions and new Keyword
+Constructor Functions: In JavaScript, constructor functions are used to create new objects. When you use the new keyword with a constructor function, a new object is created, and its prototype is set to the constructor's prototype property.
+
+javascript
+Copy code
+function Person(name) {
+  this.name = name;
+}
+
+Person.prototype.greet = function() {
+  console.log("Hello, " + this.name);
+};
+
+const john = new Person('John');
+john.greet(); // Outputs: Hello, John
+Here, Person.prototype.greet is a method available to all instances created with new Person().
+
+Without new Keyword: If you call a constructor function without new, it won't create a new instance, and the this keyword inside the constructor function will not refer to a new object. This is why it's common to use new with constructor functions.
+
+FunctionName.prototype.methodName
+Adding Methods: You can add methods to the prototype of a constructor function, and these methods will be available to all instances created by that constructor function.
+
+javascript
+Copy code
+function Car(model) {
+  this.model = model;
+}
+
+Car.prototype.start = function() {
+  console.log("Starting " + this.model);
+};
+
+const myCar = new Car('Toyota');
+myCar.start(); // Outputs: Starting Toyota
+In this example, start is added to Car.prototype, making it available to all Car instances.
+
+Summary
+Prototype Chain: JavaScript uses prototypes to implement inheritance, where each object can inherit properties and methods from its prototype.
+Constructor Functions: The new keyword is used to create new objects and set up their prototype chain.
+Prototype Methods: Methods added to a constructor function's prototype are shared among all instances of that constructor.
