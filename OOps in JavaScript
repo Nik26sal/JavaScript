@@ -145,3 +145,172 @@ Summary
 Prototype Chain: JavaScript uses prototypes to implement inheritance, where each object can inherit properties and methods from its prototype.
 Constructor Functions: The new keyword is used to create new objects and set up their prototype chain.
 Prototype Methods: Methods added to a constructor function's prototype are shared among all instances of that constructor.
+
+
+Lecture 3 OOps
+
+This Keyword refer in window or Browser to window object but in node environment refer to {} empty object
+.call method is used to call another function inside the any other functionused to hold the refrence
+
+example::
+
+function setUserName(UserName){
+      this.userName = userName;
+}
+function createUser(userName,email){
+     setUserName.call(this,userName)
+     this.email = email
+}
+const chai = new createUser(chai,skews@gmail.com);
+console.log(chai);
+
+JavaScript this Keyword
+The this keyword in JavaScript refers to the context in which a function is executed. Its value is determined by how a function is called:
+
+In the Global Context:
+
+Browser: this refers to the global window object.
+Node.js: this refers to an empty object ({}), as Node.js does not have a window object.
+In a Function Context:
+
+Non-Strict Mode: If you call a function without any context, this refers to the global object (window in browsers, {} in Node.js).
+Strict Mode: this is undefined if the function is called without context.
+In an Object Method: this refers to the object that owns the method.
+
+In a Constructor Function: When a function is invoked with the new keyword, this refers to the new instance being created.
+
+JavaScript call Method
+The call method allows you to invoke a function with a specified this value and arguments provided individually. The syntax is:
+
+javascript
+Copy code
+functionName.call(thisValue, arg1, arg2, ...);
+thisValue: The value to be passed as this when calling the function.
+arg1, arg2, ...: Arguments to be passed to the function.
+Example Explained
+Let's dissect the example you provided:
+
+Function Definitions
+setUserName Function:
+
+javascript
+Copy code
+functionsetUserName(userName) {
+    this.userName = userName;
+}
+This function assigns the userName parameter to the userName property of the this context.
+createUser Function:
+
+javascript
+Copy code
+functioncreateUser(userName, email) {
+    setUserName.call(this, userName); // Use call to set `userName` on the current contextthis.email = email;
+}
+setUserName.call(this, userName) calls setUserName with this as the context. This means the userName will be set on the createUser instance.
+Instantiating createUser
+javascript
+Copy code
+const chai = newcreateUser('chai', 'skews@gmail.com');
+new createUser('chai', 'skews@gmail.com') creates a new instance of createUser.
+The new keyword:
+Creates a new object.
+Sets this in createUser to that new object.
+Calls the createUser function with this new object as the context.
+Adds userName and email properties to the new object.
+Result
+When you log chai:
+
+javascript
+Copy code
+console.log(chai);
+The output is:
+javascript
+Copy code
+createUser { userName: 'chai', email: 'skews@gmail.com' }
+This shows that the chai object has both userName and email properties set as expected.
+Summary
+this: Refers to the context of execution. Its value changes depending on where and how a function is invoked.
+call Method: Invokes a function with a specified this context and arguments.
+Constructor Functions: Create new instances, setting this to the newly created object.
+
+
+Lecture 4 oops
+
+classes
+// ES6
+
+class User {
+    constructor(username, email, password){
+        this.username = username;
+        this.email = email;
+        this.password = password
+    }
+
+    encryptPassword(){
+        return `${this.password}abc`
+    }
+    changeUsername(){
+        return `${this.username.toUpperCase()}`
+    }
+
+}
+
+const chai = new User("chai", "chai@gmail.com", "123")
+
+console.log(chai.encryptPassword());
+console.log(chai.changeUsername());
+
+// behind the scene
+
+function User(username, email, password){
+    this.username = username;
+    this.email = email;
+    this.password = password
+}
+
+User.prototype.encryptPassword = function(){
+    return `${this.password}abc`
+}
+User.prototype.changeUsername = function(){
+    return `${this.username.toUpperCase()}`
+}
+
+
+const tea = new User("tea", "tea@gmail.com", "123")
+
+console.log(tea.encryptPassword());
+console.log(tea.changeUsername());
+
+inheritance
+
+class User {
+    constructor(username){
+        this.username = username
+    }
+
+    logMe(){
+        console.log(`USERNAME is ${this.username}`);
+    }
+}
+
+class Teacher extends User{
+    constructor(username, email, password){
+        super(username)
+        this.email = email
+        this.password = password
+    }
+
+    addCourse(){
+        console.log(`A new course was added by ${this.username}`);
+    }
+}
+
+const chai = new Teacher("chai", "chai@teacher.com", "123")
+
+chai.logMe()
+const masalaChai = new User("masalaChai")
+
+masalaChai.logMe()
+
+console.log(chai instanceof User);
+     
